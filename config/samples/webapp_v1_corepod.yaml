@@ -3,11 +3,11 @@ kind: CorePod
 metadata:
   labels:
     app.kubernetes.io/name: corepod
-    app.kubernetes.io/instance: corepod-sample
+    app.kubernetes.io/instance: corepod
     app.kubernetes.io/part-of: aescloud
     app.kubernetes.io/managed-by: kustomize
     app.kubernetes.io/created-by: aescloud
-  name: corepod-sample
+  name: corepod
 spec:
   size: 1
   pvSize: 1

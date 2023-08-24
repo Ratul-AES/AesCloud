@@ -31,8 +31,8 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/healthz"
 	"sigs.k8s.io/controller-runtime/pkg/log/zap"
 
-	webappv1 "aes.dev/orgpod/api/v1"
-	"aes.dev/orgpod/internal/controller"
+	webappv1 "aes.dev/corepod/api/v1"
+	"aes.dev/corepod/internal/controller"
 	//+kubebuilder:scaffold:imports
 )
 

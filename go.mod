@@ -1,4 +1,4 @@
-module aes.dev/orgpod
+module aes.dev/corepod
 
 go 1.20
 

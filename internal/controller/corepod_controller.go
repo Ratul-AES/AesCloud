@@ -26,7 +26,7 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/controller/controllerutil"
 	"sigs.k8s.io/controller-runtime/pkg/log"
 
-	webappv1 "aes.dev/orgpod/api/v1"
+	webappv1 "aes.dev/corepod/api/v1"
 )
 
 // CorePodReconciler reconciles a CorePod object

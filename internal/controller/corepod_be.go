@@ -3,7 +3,7 @@ package controller
 import (
 	"context"
 
-	webappv1 "aes.dev/orgpod/api/v1"
+	webappv1 "aes.dev/corepod/api/v1"
 	"github.com/go-logr/logr"
 	"k8s.io/apimachinery/pkg/api/errors"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"

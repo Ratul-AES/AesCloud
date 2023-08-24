@@ -6,7 +6,7 @@ domain: aes.dev
 layout:
 - go.kubebuilder.io/v4
 projectName: aescloud
-repo: aes.dev/orgpod
+repo: aes.dev/corepod
 resources:
 - api:
     crdVersion: v1
@@ -15,7 +15,7 @@ resources:
   domain: aes.dev
   group: webapp
   kind: CoreExt
-  path: aes.dev/orgpod/api/v1
+  path: aes.dev/corepod/api/v1
   version: v1
 - api:
     crdVersion: v1
@@ -24,7 +24,7 @@ resources:
   domain: aes.dev
   group: webapp
   kind: DbPod
-  path: aes.dev/orgpod/api/v1
+  path: aes.dev/corepod/api/v1
   version: v1
 - api:
     crdVersion: v1
@@ -33,7 +33,7 @@ resources:
   domain: aes.dev
   group: webapp
   kind: CorePod
-  path: aes.dev/orgpod/api/v1
+  path: aes.dev/corepod/api/v1
   version: v1
 - api:
     crdVersion: v1
@@ -42,6 +42,6 @@ resources:
   domain: aes.dev
   group: webapp
   kind: OrgPod
-  path: aes.dev/orgpod/api/v1
+  path: aes.dev/corepod/api/v1
   version: v1
 version: "3"
