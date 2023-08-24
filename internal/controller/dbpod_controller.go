@@ -25,7 +25,6 @@ import (
 	"k8s.io/apimachinery/pkg/types"
 	ctrl "sigs.k8s.io/controller-runtime"
 	"sigs.k8s.io/controller-runtime/pkg/client"
-	"sigs.k8s.io/controller-runtime/pkg/controller/controllerutil"
 	"sigs.k8s.io/controller-runtime/pkg/log"
 
 	webappv1 "aes.dev/corepod/api/v1"
@@ -66,7 +65,7 @@ func (r *DbPodReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctrl
 		return ctrl.Result{}, nil
 	}
 
-	dbFinalizer := "webapp.aes.dev/finalizer"
+	/*dbFinalizer := "webapp.aes.dev/finalizer"
 	if dbpod.ObjectMeta.DeletionTimestamp.IsZero() {
 		if !containsString(dbpod.GetFinalizers(), dbFinalizer) {
 			controllerutil.AddFinalizer(dbpod, dbFinalizer)
@@ -95,7 +94,7 @@ func (r *DbPodReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctrl
 		// Stop reconciliation as the item is being deleted
 		return ctrl.Result{}, nil
 	}
-
+	*/
 	if dbpod.Name != dbpod.Status.Name {
 		dbpod.Status.Name = dbpod.Name
 		r.Status().Update(ctx, dbpod)
@@ -153,15 +152,6 @@ func (r *DbPodReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctrl
 	l.Info("dbpod Secret Created :)", "SecretName", dbsec.Name, "SecretNamespace", dbsec.Namespace)
 
 	///// ======> DB DEPL FILE:
-
-	// TODO(user): your logic here   -1
-	/*pvc, err := r.reconcilePVC(ctx, dbpod, l)
-
-	if err != nil {
-		return ctrl.Result{}, err
-	}
-
-	l.Info("dbpod PVC Created :)", "PVCName", pvc.Name, "PVCNamespace", pvc.Namespace)*/
 
 	/////////////////// DB DEPL
 	mysql, err := r.reconcileDBDepl(ctx, dbpod, l)

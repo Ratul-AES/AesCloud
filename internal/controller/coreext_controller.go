@@ -25,7 +25,6 @@ import (
 	"k8s.io/apimachinery/pkg/types"
 	ctrl "sigs.k8s.io/controller-runtime"
 	"sigs.k8s.io/controller-runtime/pkg/client"
-	"sigs.k8s.io/controller-runtime/pkg/controller/controllerutil"
 	"sigs.k8s.io/controller-runtime/pkg/log"
 
 	webappv1 "aes.dev/corepod/api/v1"
@@ -65,7 +64,7 @@ func (r *CoreExtReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ct
 		l.Info("[COREEXT] Rec entered after delete...")
 		return ctrl.Result{}, nil
 	}
-	dbFinalizer := "webapp.aes.dev/finalizerext"
+	/*dbFinalizer := "webapp.aes.dev/finalizerext"
 	if ext.ObjectMeta.DeletionTimestamp.IsZero() {
 		if !containsString(ext.GetFinalizers(), dbFinalizer) {
 			controllerutil.AddFinalizer(ext, dbFinalizer)
@@ -94,6 +93,7 @@ func (r *CoreExtReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ct
 		// Stop reconciliation as the item is being deleted
 		return ctrl.Result{}, nil
 	}
+	*/
 
 	//Permissions Resources
 

@@ -23,7 +23,6 @@ import (
 	"k8s.io/apimachinery/pkg/types"
 	ctrl "sigs.k8s.io/controller-runtime"
 	"sigs.k8s.io/controller-runtime/pkg/client"
-	"sigs.k8s.io/controller-runtime/pkg/controller/controllerutil"
 	"sigs.k8s.io/controller-runtime/pkg/log"
 
 	webappv1 "aes.dev/corepod/api/v1"
@@ -62,7 +61,7 @@ func (r *CorePodReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ct
 		l.Info("[COREPOD] Rec entered after delete...")
 		return ctrl.Result{}, nil
 	}
-	dbFinalizer := "webapp.aes.dev/finalizercore"
+	/*dbFinalizer := "webapp.aes.dev/finalizercore"
 	if core.ObjectMeta.DeletionTimestamp.IsZero() {
 		if !containsString(core.GetFinalizers(), dbFinalizer) {
 			controllerutil.AddFinalizer(core, dbFinalizer)
@@ -91,6 +90,7 @@ func (r *CorePodReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ct
 		// Stop reconciliation as the item is being deleted
 		return ctrl.Result{}, nil
 	}
+	*/
 	if core.Name != core.Status.Name {
 		core.Status.Name = core.Name
 		r.Status().Update(ctx, core)

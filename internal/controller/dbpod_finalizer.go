@@ -1,17 +1,6 @@
 package controller
 
-import (
-	"context"
-
-	webappv1 "aes.dev/corepod/api/v1"
-	"github.com/go-logr/logr"
-	appsv1 "k8s.io/api/apps/v1"
-	corev1 "k8s.io/api/core/v1"
-	"k8s.io/apimachinery/pkg/types"
-	"sigs.k8s.io/controller-runtime/pkg/client"
-)
-
-func (r *DbPodReconciler) deleteExternalResources(ctx context.Context, dbpod *webappv1.DbPod, l logr.Logger) error {
+/*func (r *DbPodReconciler) deleteExternalResources(ctx context.Context, dbpod *webappv1.DbPod, l logr.Logger) error {
 	//
 	// delete any external resources associated with the cronJob
 	//
@@ -142,4 +131,4 @@ func (r *DbPodReconciler) deleteExternalResources(ctx context.Context, dbpod *we
 	l.Info("[PVC0]: Delete ")
 
 	return nil
-}
+}*/
