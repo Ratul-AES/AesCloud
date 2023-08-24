@@ -1,0 +1,26 @@
+apiVersion: webapp.aes.dev/v1
+kind: CorePod
+metadata:
+  labels:
+    app.kubernetes.io/name: corepod
+    app.kubernetes.io/instance: corepod-sample
+    app.kubernetes.io/part-of: aescloud
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: aescloud
+  name: corepod-sample
+spec:
+  size: 1
+  pvSize: 1
+  #coreImg: "shahidulaes/aes-core-org:0.6.8"
+  # dbImg: "mysql:5.7"
+  # goImg: "furkaan96/adcs:0.3.7"
+  #coreImg: "devopsaes/be-aes-core-org:0.7.2"
+  coreImg: "devopsaes/be-aes-core-org:0.21.0"
+  dbImg: "mysql:5.7"
+  frontendImg: "devopsaes/mfe-core:1.10"
+  frontendImgFs: "devopsaes/mfe-fs:1.1"
+  frontendImgOrg: "devopsaes/mfe-org:1.0"
+  frontendImgUm: "devopsaes/mfe-user-mngt:0.5"
+  # goImg: "furkaan96/adcs:0.3.7"
+  goImg: "shahidulaes/kuberaes:0.1.1"
+  beReplicas: 1

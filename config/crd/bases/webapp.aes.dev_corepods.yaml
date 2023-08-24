@@ -1,0 +1,78 @@
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.12.0
+  name: corepods.webapp.aes.dev
+spec:
+  group: webapp.aes.dev
+  names:
+    kind: CorePod
+    listKind: CorePodList
+    plural: corepods
+    singular: corepod
+  scope: Namespaced
+  versions:
+  - name: v1
+    schema:
+      openAPIV3Schema:
+        description: CorePod is the Schema for the corepods API
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: CorePodSpec defines the desired state of CorePod
+            properties:
+              beReplicas:
+                format: int32
+                type: integer
+              coreImg:
+                type: string
+              dbImg:
+                type: string
+              frontendImg:
+                type: string
+              frontendImgFs:
+                type: string
+              frontendImgOrg:
+                type: string
+              frontendImgUm:
+                type: string
+              goImg:
+                type: string
+              pvSize:
+                type: integer
+              size:
+                description: Foo is an example field of CorePod. Edit corepod_types.go
+                  to remove/update
+                type: integer
+            type: object
+          status:
+            description: CorePodStatus defines the observed state of CorePod
+            properties:
+              name:
+                description: 'INSERT ADDITIONAL STATUS FIELD - define observed state
+                  of cluster Important: Run "make" to regenerate code after modifying
+                  this file'
+                type: string
+              progress:
+                type: string
+              ready:
+                type: string
+            type: object
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}

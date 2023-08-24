@@ -1,0 +1,31 @@
+# permissions for end users to edit orgpods.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: orgpod-editor-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: aescloud
+    app.kubernetes.io/part-of: aescloud
+    app.kubernetes.io/managed-by: kustomize
+  name: orgpod-editor-role
+rules:
+- apiGroups:
+  - webapp.aes.dev
+  resources:
+  - orgpods
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - webapp.aes.dev
+  resources:
+  - orgpods/status
+  verbs:
+  - get

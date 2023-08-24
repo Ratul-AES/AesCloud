@@ -1,0 +1,7 @@
+## Append samples of your project ##
+resources:
+- webapp_v1_coreext.yaml
+- webapp_v1_dbpod.yaml
+- webapp_v1_corepod.yaml
+- webapp_v1_orgpod.yaml
+#+kubebuilder:scaffold:manifestskustomizesamples

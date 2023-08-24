@@ -1,0 +1,12 @@
+apiVersion: webapp.aes.dev/v1
+kind: CoreExt
+metadata:
+  labels:
+    app.kubernetes.io/name: coreext
+    app.kubernetes.io/instance: coreext-sample
+    app.kubernetes.io/part-of: aescloud
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: aescloud
+  name: coreext-sample
+spec:
+  # TODO(user): Add fields here

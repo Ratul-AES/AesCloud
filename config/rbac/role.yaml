@@ -1,0 +1,110 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: manager-role
+rules:
+- apiGroups:
+  - webapp.aes.dev
+  resources:
+  - coreexts
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - webapp.aes.dev
+  resources:
+  - coreexts/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - webapp.aes.dev
+  resources:
+  - coreexts/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - webapp.aes.dev
+  resources:
+  - corepods
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - webapp.aes.dev
+  resources:
+  - corepods/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - webapp.aes.dev
+  resources:
+  - corepods/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - webapp.aes.dev
+  resources:
+  - dbpods
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - webapp.aes.dev
+  resources:
+  - dbpods/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - webapp.aes.dev
+  resources:
+  - dbpods/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - webapp.aes.dev
+  resources:
+  - orgpods
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - webapp.aes.dev
+  resources:
+  - orgpods/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - webapp.aes.dev
+  resources:
+  - orgpods/status
+  verbs:
+  - get
+  - patch
+  - update
